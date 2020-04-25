@@ -11,6 +11,8 @@ import Plataforma from './componentes/Plataforma'
 import ValidarProps from './componentes/ValidarProps'
 import Evento from './componentes/Evento'
 import {Avo} from './componentes/ComunicacaoDireta'
+import TextoSincronizado from './componentes/ComunicacaoIndireta'
+
 
 const Drawer = createDrawerNavigator();
 
@@ -36,6 +38,7 @@ export default function Routes() {
             <Drawer.Screen name="Avo">
                 {props => <Avo {...props} nome='João' sobrenome='Silva' />}
             </Drawer.Screen>
+            <Drawer.Screen name="TextoSincronizado" component={TextoSincronizado}></Drawer.Screen>
           </Drawer.Navigator>
         </NavigationContainer>
       );
