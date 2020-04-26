@@ -1,32 +1,50 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
   Text,
 } from 'react-native';
 import Button from './src/components/Button'
+import Display from './src/components/Display'
+
 
 function App() {
+
+  [display, setDisplay] = useState(0)
+
+  function addDigit(n){
+    setDisplay(n)
+  }
+
+  function clearMemory(){
+    setDisplay(0)
+  }
+
+  function setOperation(operation){
+
+  }
+
   return(
-    <View>
+    <View style={styles.container}>
+      <Display value={display}></Display>
       <View style={styles.buttons}>
-        <Button label='AC' />
-        <Button label='/' />
-        <Button label='7' />
-        <Button label='8' />
-        <Button label='9' />
-        <Button label='*' />
-        <Button label='4' />
-        <Button label='5' />
-        <Button label='6' />
-        <Button label='-' />
-        <Button label='1' />
-        <Button label='2' />
-        <Button label='3' />
-        <Button label='+' />
-        <Button label='0' />
-        <Button label='.' />
-        <Button label='=' />
+        <Button label='AC' triple onClick={() => clearMemory()} />
+        <Button label='/' operation onClick={setOperation}/>
+        <Button label='7' onClick={addDigit} />
+        <Button label='8' onClick={addDigit} />
+        <Button label='9' onClick={addDigit} />
+        <Button label='*' operation onClick={setOperation}/>
+        <Button label='4' onClick={addDigit} />
+        <Button label='5' onClick={addDigit} />
+        <Button label='6' onClick={addDigit} />
+        <Button label='-' operation onClick={setOperation} />
+        <Button label='1' onClick={addDigit} />
+        <Button label='2' onClick={addDigit} />
+        <Button label='3' onClick={addDigit} />
+        <Button label='+' operation onClick={setOperation} />
+        <Button label='0' double onClick={addDigit} />
+        <Button label='.' onClick={addDigit} />
+        <Button label='='  operation onClick={setOperation}/>
 
       </View>
     </View>
