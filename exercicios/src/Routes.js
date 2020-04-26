@@ -13,6 +13,8 @@ import Evento from './componentes/Evento'
 import {Avo} from './componentes/ComunicacaoDireta'
 import TextoSincronizado from './componentes/ComunicacaoIndireta'
 import ListaFlex from './componentes/listaFlex'
+import Flex from './componentes/Flex'
+
 
 
 const Drawer = createDrawerNavigator();
@@ -41,6 +43,7 @@ export default function Routes() {
             </Drawer.Screen>
             <Drawer.Screen name="TextoSincronizado" component={TextoSincronizado}></Drawer.Screen>
             <Drawer.Screen name="ListaFlex" component={ListaFlex}></Drawer.Screen>
+            <Drawer.Screen name="Flex" component={Flex}></Drawer.Screen>
           </Drawer.Navigator>
         </NavigationContainer>
       );
